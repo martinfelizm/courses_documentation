@@ -165,3 +165,5 @@ Tutorial de Markdown:
  * Navegar dentro de la carpeta creada comando en terminal: cd .ssh
  * Ejecutar el siguiente comando para crear la clave del tipo rsa que solicita GitHub comando en terminal: ssh-keygen -t rsa -C "ejemplo@correo.com" y presionar Enter cuando *     verifiquemos que todo esta bien. Va a pedir un passphrase que es como una contraseña que va a pedir cada ves que ingresemos la clave, es opcional, pero es altamente recomendado, y una confirmacion de la misma en caso que si la queremos tener.
  * Despues de haber verificado que esta creados los archivos id_rsa y id_rsa.pub entonces procedemos a buscar la opción en Github para agregar la clave SSH. Hay le pondriamos un nombre para identificar la nueva clave agregada y a copiar el código que esta en el archivo id_rsa.pub. Despues de guardada la clave en nuestra linea de comando ejecutaremos el comando en terminal: ssh -T git@github.com
+
+ ## more commands Git https://git-scm.com/docs/git-stash
