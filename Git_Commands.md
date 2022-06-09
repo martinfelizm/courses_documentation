@@ -168,7 +168,10 @@ Tutorial de Markdown:
 
  ## more commands Git https://git-scm.com/docs/git-stash
  
-# No reconoce .gitignore
+# Si No reconoce .gitignore
 * git rm -r --cached .
 * git add .
 * git commit -m ".gitignore Fixed"
+
+# Si se quiere subir una carpeta vacia a un repositorio
+* Se debe agregar un archivo .gitkeep
