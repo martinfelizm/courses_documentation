@@ -48,3 +48,45 @@ void main(){
   
   print(masNumeros);
 }
+
+## Tipo de dato - Map
+void main(){
+/*
+  Map persona ={
+    'nombre': 'Martin',
+    'edad': 37,
+    'soltero': false,
+    true:false,
+      1:100
+  };
+  print(persona);
+  print(persona['nombre']);
+   print(persona[true]);
+   */
+   Map <String, dynamic> persona ={
+    'nombre': 'Martin',
+    'edad': 37,
+    'soltero': false
+  };
+  persona.addAll({'segundo nombre':'Jose'});
+  print(persona);
+  
+}
+
+## Funciones en Dart
+void main(){
+final name = 'Martin';
+  saludar(name);
+  saludar2(nombre: name);
+}
+
+void saludar( String nombre, [String mensaje = 'No tiene']){
+  print("Buenos dias $nombre Mensajes: $mensaje");
+}
+
+void saludar2(
+  {required String nombre,
+ String? mensaje, String aviso = 'Sin Aviso' } 
+){
+  print('$nombre $mensaje $aviso');
+}
