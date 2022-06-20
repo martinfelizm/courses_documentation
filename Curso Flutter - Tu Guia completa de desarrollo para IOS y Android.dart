@@ -90,3 +90,58 @@ void saludar2(
 ){
   print('$nombre $mensaje $aviso');
 }
+
+## Clases en Dart
+void main(){
+final wolwerine = new Hero(nombre:'Logan',poder:'Regeneracion');
+  /*
+  wolwerine.nombre = 'Logan';
+  wolwerine.poder = 'Regeneración';
+  */
+  
+  print(wolwerine);
+}
+
+class Hero{
+  String nombre;
+  String poder;
+  
+  //Hero(this.nombre, this.poder);
+  Hero({required this.nombre, required this.poder});
+  
+  @override
+  String toString(){
+    return 'Heroe: Nombre: ${this.nombre}, Poder: ${this.poder}';
+  }
+  
+}
+
+## Constructores por Nombre
+void main(){
+
+ final rawjson = {
+    'nombre': 'Hulk',
+    'poder' : 'Super Fuerza'
+  };
+
+  final ironman  = Hero.fromJson(rawjson);
+  
+  print(ironman);
+}
+
+class Hero{
+  String nombre;
+  String poder;
+
+  Hero.fromJson(Map<String, String> json):
+    this.nombre = json['nombre']!,
+    this.poder = json['poder']!;
+    //this.poder = json['poder'] ?? 'No tiene poder';
+ 
+  
+  @override
+  String toString(){
+    return 'Heroe: Nombre: ${this.nombre}, Poder: ${this.poder}';
+  }
+  
+}
