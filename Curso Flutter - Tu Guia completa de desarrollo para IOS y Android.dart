@@ -145,3 +145,92 @@ class Hero{
   }
   
 }
+
+## Getter & Setter Dart
+import 'dart:math' as Math;
+void main(){
+ final clCuadrado = new Cuadrado(10);
+  clCuadrado.area = 35;
+  print('La propiedad Get Area es igual a: ${clCuadrado.area}');
+  print('La propiedad Set Lado es igual a: ${clCuadrado.lado}');
+}
+
+class Cuadrado{
+ double lado;
+ double get area{
+     return this.lado * this.lado;
+ }
+  set area(double valor){
+     this.lado = Math.sqrt(valor);
+ }
+Cuadrado(double plado): this.lado = plado;  
+  
+}
+
+## Clases Abstractas en Dart
+void main(){
+ final perro = new Perro();
+ final gato = new Gato();
+  
+  sonidoAnimal(perro);
+  sonidoAnimal(gato);
+}
+
+void sonidoAnimal(Animal animal){
+  animal.emitirSonido();
+}
+abstract class Animal{
+  int? patas;
+
+  void emitirSonido();  
+}
+
+class Perro implements Animal{
+  int? patas;
+
+  @override
+  void emitirSonido()=> print('Guauuuu');  
+}
+
+class Gato implements Animal{
+  int? patas;
+  int? cola; 
+  
+  @override
+  void emitirSonido()=> print('Miauuu');  
+}
+
+## Extends Class en Dart
+void main(){
+  final wolwerine = new Heroe('Logan');
+  final luthor = new Villano('Lex Luthor');
+  
+  print(wolwerine);
+  print(luthor);
+}
+
+abstract class Personaje{
+  String? poder;
+  String nombre;
+  
+  Personaje(this.nombre);
+  
+  @override
+  String toString(){
+    return '$nombre - $poder';
+  }
+}
+
+class Heroe extends Personaje{
+  int valentia = 100;
+  
+  Heroe(String nombre): super( nombre );
+}
+
+class Villano extends Personaje{
+  int maldad = 50;
+  
+  Villano(String nombre): super( nombre );
+}
+
+## Mixins en Dart
