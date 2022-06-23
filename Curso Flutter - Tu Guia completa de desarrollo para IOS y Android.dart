@@ -234,3 +234,69 @@ class Villano extends Personaje{
 }
 
 ## Mixins en Dart
+abstract class Animal{}
+
+abstract class Mamal extends Animal{}
+
+abstract class Bird extends Animal{}
+
+abstract class Fish extends Animal{}
+
+abstract class Fly{
+  void flying() => print('I am flying');
+}
+abstract class Walk{
+  void walking() => print('I am walking');
+}
+abstract class Swim{
+    void swimming() => print('I am swimming');
+}
+
+class Bat extends Mamal with Fly, Walk{}
+  
+class Dolphin extends Mamal with Swim{}
+
+class Dove extends Mamal with Fly, Walk{}
+  
+class Cat extends Mamal with Walk{}
+
+class Duck extends Mamal with Fly, Walk, Swim{}
+
+void main(){
+  final flipper = new Dolphin();
+  flipper.swimming();
+  
+  final batman = new Bat();
+  batman.walking();
+  batman.flying();
+  
+   final catwoman = new Cat();
+  catwoman.walking();
+  
+   final doveM = new Dove();
+  doveM.walking();
+  doveM.flying();
+  
+  final donalDuck = new Duck();
+  donalDuck.walking();
+  donalDuck.flying();
+  donalDuck.swimming();  
+}
+
+## Futures en Dart
+void main(){
+  print('Inicio del programa');
+  httpGet('http://www.Google.com').then( (data) => print(data.toUpperCase()));
+  print('Fin del programa');
+}
+/*
+Future httpGet(String url){
+ return Future.delayed( Duration( seconds:3 ), (){
+   return 'Hola Mundo - 3 segundos';
+ });
+}*/
+Future<String> httpGet(String url){
+ return Future.delayed( Duration( seconds:3 ), (){
+   return 'Hola Mundo - 3 segundos';
+ });
+}
