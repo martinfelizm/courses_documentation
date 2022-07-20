@@ -300,3 +300,29 @@ Future<String> httpGet(String url){
    return 'Hola Mundo - 3 segundos';
  });
 }
+
+## Async - Await en Dart
+void main() async{
+  print('Inicio del programa');
+  final data = await httpGet('http://www.Google.com');
+  print( data );
+  print('Fin del programa');
+}
+
+Future<String> httpGet(String url){
+ return Future.delayed( Duration( seconds:3 ), (){
+   return 'Hola Mundo - 3 segundos';
+ });
+}
+
+
+------------------------------------------
+## Flutter Commands
+flutter channel dev
+flutter upgrade
+flutter config --enable-web
+mkdir <new_project_directory_name>
+cd <into new_project_directory>
+flutter create .
+flutter run -d chrome
+
